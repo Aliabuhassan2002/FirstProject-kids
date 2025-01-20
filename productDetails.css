@@ -1,0 +1,636 @@
+:root {
+  --main-color: #eecad5;
+  --text-color: #1d2939;
+  --bg--color: #f9ffff;
+  --body--color: #f8fcff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fav-icon i {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 5px;
+  transition: color 0.5s;
+  transition: font-size 0.5s;
+}
+
+.fav-icon i:hover {
+  color: #eecad5;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--body--color);
+  justify-content: center;
+}
+
+/* ==========================nav bar========================================== */
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #EECAD5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  font-size: 2rem;
+  color: #FFB6C1;
+  /* A complementary pink color */
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.1s ease-in-out;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #FF69B4;
+  /* Another fun color for the icon */
+  animation: bounce 1.5s infinite;
+}
+
+/* Add a bouncing animation */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+
+/* hero ================================================== */
+.heroSection img {
+  width: 100%;
+  height: 65vh;
+}
+
+#btn_nav {
+  height: 45px;
+  background-color: var(--main-color);
+}
+
+#sections {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--bg--color);
+  min-height: 25vh;
+}
+
+
+/* ======================================================== */
+#gift-details {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body--color);
+}
+
+.gift-content {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  align-items: flex-start;
+}
+
+.image-wrapper {
+  border: 4px solid var(--main-color);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.image-wrapper:hover {
+  border: 4px solid #8b158b;
+  /* تغيير الإطار عند هوفر */
+  box-shadow: 0 0 15px 10px var(--main-color)
+}
+
+#mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.text-section h1 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #ff80ab;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 1.2rem;
+  color: #eca6bd;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.line_color {
+  border: 1px dashed #ff80ab;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  font-size: 1rem;
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  text-align: center;
+}
+
+button.add-to-cart {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.add-to-cart:hover {
+  background-color: #f50057;
+  transform: scale(1.1);
+}
+
+/* ============================================================= */
+#review_form {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fefefe;
+  border: 1px solid #e0d4d5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 24px;
+  color: #704f57;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #704f57;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #d4a7ad;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #704f57;
+}
+
+.form-control:focus {
+  outline: none;
+  border: 1px solid #704f57;
+  box-shadow: 0 0 5px rgba(112, 79, 87, 0.5);
+}
+
+.stars {
+  color: lightgray;
+  /* لون النجوم غير المحددة */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.stars .fa-star.active {
+  color: gold;
+  /* لون النجوم المحددة */
+}
+
+#ratingDisplay {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.form-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #d4a7ad;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: #704f57;
+}
+
+/* ========= */
+/* Reviews Section */
+.reviews-section {
+  padding: 40px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Reviews List */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  /* For Firefox */
+  scrollbar-color: #ccc transparent;
+  /* For Firefox */
+}
+
+
+
+/* Card Styling */
+.review-card {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.review-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.review-header div {
+  flex-grow: 1;
+}
+
+.reviewer-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.review-date {
+  font-size: 12px;
+  color: #888;
+}
+
+.rating {
+  font-size: 14px;
+  font-weight: bold;
+  color: #f39c12;
+}
+
+.review-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* form review============================= */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+
+.rating-box {
+  position: relative;
+  background: #fff;
+  padding: 25px 50px 35px;
+  border-radius: 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.rating-box header {
+  font-size: 22px;
+  color: #dadada;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.stars span {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: gray;
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.stars span:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+}
+
+
+.stars span.active {
+  color: #ffcc00;
+  text-shadow: 0 0 10px rgba(255, 200, 0, 0.8), 0 0 20px rgba(255, 200, 0, 0.6);
+  transform: scale(1.);
+}
+
+
+.output {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+
+}
+
+/* =============cards========== */
+.related-gifts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.related {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+.product-card {
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 80%;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card .card-body {
+  padding: 15px;
+}
+
+.product-card .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-card .rating {
+  color: #ffc107;
+  /* Yellow for stars */
+}
+
+.product-card .buy-btn {
+  background-color: #f8d7e0;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+}
+
+.product-card .buy-btn:hover {
+  background-color: #f5b8c6;
+}
+
+
+
+
+
+.main-image {
+  width: 40%;
+  height: auto;
+}
+
+.gift-image img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.thumbnail {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+/* ============footer================ */
+
+footer {
+  background-color: var(--main-color);
+}
+
+#social_icon {
+  padding-bottom: 15px;
+}
+
+#social_icon li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#social_icon i {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+#social_icon i:hover {
+  color: #FF69B4;
+}
+
+footer li {
+  cursor: pointer;
+}
+
+
+/* ======================media================================== */
+
+/* ///===================================// */
+
+/* Responsive Design for Phones */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 2rem;
+  }
+
+  .logo span {
+    font-size: 1.5rem;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+
+  .heroSection img {
+    height: 40vh;
+  }
+
+  #sections {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  #gift-details {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .gift-info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #img_container {
+    width: 100%;
+    text-align: center;
+  }
+
+  #gift-details .container {
+    width: 100%;
+  }
+
+  .related-gifts {
+    height: auto;
+    padding: 20px;
+  }
+
+  .related {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .product-card {
+    width: 100%;
+  }
+
+  .reviews-section {
+    padding: 20px 10px;
+  }
+
+  .scroll-container {
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 10px;
+  }
+
+  .review-card {
+    max-width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  .review-header img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .reviewer-name {
+    font-size: 14px;
+  }
+
+  .review-date {
+    font-size: 10px;
+  }
+
+  .rating {
+    font-size: 12px;
+  }
+
+  .review-text {
+    font-size: 12px;
+  }
+}

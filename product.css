@@ -1,0 +1,165 @@
+:root {
+  --main-color: #eecad5;
+  --text-color: #1d2939;
+  --bg--color: #f9ffff;
+  --body--color: #f8fcff;
+}
+
+* {
+  margin: 0px;
+}
+
+body {
+  background-color: var(--body--color);
+}
+
+/* -----------------------header----------------------- */
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #EECAD5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  font-size: 2rem;
+  color: #FFB6C1;
+  /* A complementary pink color */
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.1s ease-in-out;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #FF69B4;
+  /* Another fun color for the icon */
+  animation: bounce 1.5s infinite;
+}
+
+/* Add a bouncing animation */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.fav-icon i {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 5px;
+  transition: color 0.5s;
+  transition: font-size 0.5s;
+  color: #1d2939;
+}
+
+.fav-icon i:hover {
+  color: #eecad5;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+/* -----------------------hero section----------------------- */
+
+.heroSection img {
+  width: 100%;
+  height: 60vh;
+}
+
+/* -----------------------filter feature----------------------- */
+#filterContainer {
+  background-color: var(--bg--color);
+}
+
+#dropdownContainer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#dropdownBTN {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  font-weight: bold;
+  box-shadow: #7e445684 4px 4px 8px;
+}
+
+.dropDownItems:hover {
+  cursor: pointer;
+}
+
+/* -----------------------product cards----------------------- */
+
+#cardContainer h2 {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#cardItem {
+  width: 300px;
+  margin: 10px;
+}
+
+#imgCard {
+  width: 100%;
+  height: 250px;
+}
+
+#textCardContainer {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* -----------------------footer----------------------- */
+
+footer {
+  background-color: var(--main-color);
+}
+
+#social_icon {
+  padding-bottom: 15px;
+}
+
+#social_icon li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#social_icon i {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+#social_icon i:hover {
+  color: #ff69b4;
+}

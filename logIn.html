@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="logIn.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="img/Screenshot 2025-01-15 212824.png" alt="Login">
+        </div>
+        <div class="form-section">
+            <h2>Welcome back!</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="login-email">Email address</label>
+                    <input type="email" id="login-email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password">
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember for 30 days</label>
+                </div>
+                <button type="button" class="form-button" id="login-btn">Login</button>
+            </form>
+            <div class="divider">or</div>
+            <div class="social-buttons">
+                <div class="social-button" id="google-signin-btn">
+                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                    <a href="javascript:void(0);">Sign in with Google</a>
+                </div>
+                <div class="social-button">
+                    <img src="https://img.icons8.com/ios-filled/50/facebook.png" alt="Facebook">
+                    <a href="https://web.facebook.com/?_rdc=1&_rdr#">Sign in with Facebook</a>
+                </div>
+            </div>
+            <div class="text-link">
+                Don’t have an account? <a href="signUp.html">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import {
+            getAuth,
+            signInWithEmailAndPassword,
+            GoogleAuthProvider,
+            signInWithPopup
+        } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAgyWGXCAIR6NiKfkzkWZbBeOMPRDNwMg4",
+            authDomain: "contactus-a9d19.firebaseapp.com",
+            databaseURL: "https://contactus-a9d19-default-rtdb.firebaseio.com",
+            projectId: "contactus-a9d19",
+            storageBucket: "contactus-a9d19.appspot.com",
+            messagingSenderId: "290565306453",
+            appId: "1:290565306453:web:0995f78c2a17d582903cdc"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        auth.languageCode = 'en';
+
+        // Email & Password Login
+        let button = document.getElementById("login-btn");
+
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    window.location.href = "index.html";
+                    alert('Welcome to the world of kids');
+                })
+                .catch((error) => {
+                    alert("Incorrect email or password");
+                });
+        });
+
+        // Google Sign-In
+        const googleSignInBtn = document.getElementById('google-signin-btn');
+        const provider = new GoogleAuthProvider();
+
+        googleSignInBtn.addEventListener('click', async () => {
+            try {
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                alert(`Welcome ${user.displayName}`);
+                window.location.href = "index.html";  // Redirect to home page after sign-in
+            } catch (error) {
+                console.error("Error signing in with Google:", error);
+                alert("Google Sign-In failed: " + error.message);
+            }
+        });
+
+    </script> -->
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import {
+            getAuth,
+            signInWithEmailAndPassword,
+            GoogleAuthProvider,
+            signInWithPopup
+        } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAgyWGXCAIR6NiKfkzkWZbBeOMPRDNwMg4",
+            authDomain: "contactus-a9d19.firebaseapp.com",
+            databaseURL: "https://contactus-a9d19-default-rtdb.firebaseio.com",
+            projectId: "contactus-a9d19",
+            storageBucket: "contactus-a9d19.appspot.com",
+            messagingSenderId: "290565306453",
+            appId: "1:290565306453:web:0995f78c2a17d582903cdc"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        auth.languageCode = 'en';
+
+        // Email & Password Login
+        let button = document.getElementById("login-btn");
+
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Email',
+                    text: 'Please enter a valid email address.'
+                });
+                return;
+            }
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    window.location.href = "index.html";
+                    alert('Welcome to the world of kids');
+                })
+                .catch((error) => {
+                    alert("Incorrect email or password");
+                });
+        });
+
+        // Google Sign-In
+        const googleSignInBtn = document.getElementById('google-signin-btn');
+        const provider = new GoogleAuthProvider();
+
+        googleSignInBtn.addEventListener('click', async () => {
+            try {
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                alert(`Welcome ${user.displayName}`);
+                window.location.href = "index.html";  // Redirect to home page after sign-in
+            } catch (error) {
+                console.error("Error signing in with Google:", error);
+                alert("Google Sign-In failed: " + error.message);
+            }
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

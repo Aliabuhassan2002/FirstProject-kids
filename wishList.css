@@ -1,0 +1,451 @@
+:root {
+  --main-color: #eecad5;
+  --text-color: #1d2939;
+  --bg--color: #f9ffff;
+  --body--color: #f8fcff;
+}
+
+/* ==========================nav bar========================================== */
+
+.fav-icon i {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 5px;
+  transition: color 0.5s;
+  transition: font-size 0.5s;
+}
+
+.fav-icon i:hover {
+  color: #eecad5;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #EECAD5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  font-size: 2rem;
+  color: #FFB6C1;
+  /* A complementary pink color */
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.1s ease-in-out;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #FF69B4;
+  /* Another fun color for the icon */
+  animation: bounce 1.5s infinite;
+}
+
+/* Add a bouncing animation */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+
+/* =============main================================================================== */
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", arial, sans-serif;
+  background-color: var(--bg--color);
+  /* padding: 5vh 5vh; */
+}
+
+#header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: var(--text-color);
+}
+
+#wish-table {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+
+}
+
+th {
+  background-color: var(--body--color);
+  color: var(--text-color);
+
+}
+
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+
+}
+
+
+tr {
+  border-bottom: 2px solid var(--main-color);
+}
+
+td {
+  vertical-align: middle;
+
+}
+
+img {
+  border-radius: 10px;
+}
+
+#goBackButton {
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+#goBackButton:hover {
+  background-color: #d3d3d3;
+  color: black;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  gap: 2px;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+  gap: 0;
+}
+
+.bin-top {
+  transform-origin: bottom right;
+}
+
+.button:hover .bin-top {
+  transition-duration: 0.5s;
+  transform: rotate(160deg);
+}
+
+.CartBtn {
+  width: 140px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: .5s;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.IconContainer {
+  position: absolute;
+  left: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: .5s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(17, 17, 17);
+  z-index: 1;
+  transition-duration: .5s;
+  font-size: 1.04em;
+  font-weight: 600;
+}
+
+.CartBtn:hover .IconContainer {
+  transform: translateX(58px);
+  border-radius: 40px;
+  transition-duration: .5s;
+}
+
+.CartBtn:hover .text {
+  transform: translate(10px, 0px);
+  transition-duration: .5s;
+}
+
+.CartBtn:active {
+  transform: scale(0.95);
+  transition-duration: .5s;
+}
+
+@media (max-width: 768px) {
+
+  /* Keep the table structure intact and display rows below the header */
+  #wishdata {
+    width: 100%;
+    margin: 0 auto;
+    /* Center the table on smaller screens */
+  }
+
+  /* Table body with 2 items per row */
+  #tableBody {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Show 2 items per row */
+    gap: 15px;
+    /* Add space between items */
+  }
+
+  /* Adjust table header to have the same grid as the body */
+  #tableHed {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    background-color: var(--main-color);
+    /* تغيير اللون هنا */
+    width: 100%;
+  }
+
+  /* Each cell will be full width and stacked vertically */
+  #tableBody td {
+    display: block;
+    /* Use block for each cell */
+    width: 100%;
+    text-align: center;
+    border: none;
+  }
+
+  /* Group every 2 rows with a border underneath */
+  #tableBody tr:nth-child(2n) {
+    border-bottom: 2px solid var(--main-color);
+  }
+
+  /* Adjust the delete button */
+  td .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Set the main table to be a flex container */
+  #wish-table {
+    display: flex;
+    flex-direction: column;
+    /* Stack header and body vertically */
+    align-items: center;
+    /* Center items horizontally */
+  }
+
+  /* Adjust table header */
+  #tableHed {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Ensure header is a single column */
+    text-align: center;
+    background-color: var(--main-color);
+    width: 100%;
+    /* Ensure the header takes full width */
+    margin-bottom: 10px;
+    /* Add space below the header */
+  }
+
+  /* Table body */
+  #tableBody {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Set body to a single column */
+    width: 100%;
+    gap: 15px;
+    /* Space between items */
+  }
+
+  /* Each cell will be full width and centered */
+  #tableBody td {
+    display: flex;
+    /* Use flexbox for centering within each cell */
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    width: 100%;
+    /* Ensure the cell takes the full width */
+    border: none;
+    padding: 10px;
+    /* Add padding for better appearance */
+  }
+
+  /* Ensure the only item in the body matches the header width */
+  #tableBody td:only-child {
+    width: 100%;
+    /* Match header width */
+  }
+}
+
+
+
+
+/* ============footer============================================================ */
+
+footer {
+  background-color: var(--main-color);
+}
+
+#social_icon {
+  padding-bottom: 15px;
+}
+
+#social_icon li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#social_icon i {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+#social_icon i:hover {
+  color: #FF69B4;
+}
+
+footer li {
+  cursor: pointer;
+}
+
+/* ======================= */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+
+  .related {
+    flex-direction: column;
+    /* Stack cards vertically */
+  }
+}
+
+/* For small devices (width less than 768px) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+
+  .product-card {
+    width: 95%;
+    margin: 10px 0;
+  }
+
+  .related {
+    margin-top: 600px;
+    flex-direction: column;
+    /* Stack cards vertically */
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 2rem;
+    /* Reduce logo size */
+  }
+}
+
+/* For extra-small devices (width less than 480px) */
+@media screen and (max-width: 480px) {
+  .buy-btn {
+    padding: 5px 10px;
+    /* Make buttons smaller */
+    font-size: 0.8rem;
+  }
+
+  .product-card img {
+    height: 150px;
+    /* Adjust image height for small screens */
+  }
+
+  .heroSection img {
+    height: 50vh;
+    /* Adjust hero section height */
+  }
+}

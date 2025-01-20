@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Carousel Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <link rel="stylesheet" href="index.css">
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/11e4363e87.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js"></script>
+    <script type="module" src="index.js" defer></script>
+
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+
+
+
+    <header class="bg-light shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <!-- Logo -->
+                <div class="logo">
+                    Tiny Joys <span>★</span>
+                    <div class="icon">❤</div>
+                </div>
+
+                <!-- Burger Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text" href="index.html" style="color: #EECAD5;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="product.html">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="aboutUs.html">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="contactUs.html">Contact </a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Search Bar and Icons -->
+                    <div class="d-flex align-items-center">
+                        <!-- Search Bar -->
+                        <div class="input-group me-3">
+                            <input type="text" class="form-control" placeholder="Search Product">
+                            <button class="btn btn-outline-secondary" type="button">
+
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+
+                        <!-- User Icon -->
+                        <a style="color: black;" href="userProfile.html">
+                            <i class="fa-regular fa-user fs-5"></i>
+                        </a>
+                        <span id="nav-username"></span>
+                        <span class="fav-icon">
+                            <a href="wishList.html"><i class="fa-regular fa-heart"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+                    </svg> -->
+
+
+                    <img src="img/5759.jpg" class="d-block w-100" alt="...">
+
+
+                    <div class="container">
+                        <div class="carousel-caption text-start" id="first-text">
+                            <h1>Kids Gift</h1>
+                            <p class="opacity-75">Simple, Childhood, Love</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+                    </svg> -->
+
+                    <img src="img/133062.jpg" class="d-block w-100" alt="...">
+
+
+
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Where every kids adventure begins!"</h1>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+                    </svg> -->
+                    <img src="img/2147781763.jpg" class="d-block w-100" alt="...">
+
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                            <h1>Every click leads to a new adventure!</h1>
+                            <!-- <p>Some representative placeholder content for the third slide of this carousel.</p> -->
+                            <!-- <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="px-4 py-5 my-5 text-center hero-background-color">
+
+            <h1 class="display-5 fw-bold text-body-emphasis">Welcome to Gift Center for Kids!</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Your one-stop shop for children's gifts, offering toys, educational games, books,
+                    and personalized gift sets.
+                    We specialize in creating joyful moments for kids with custom wrapping and sourcing unique items to
+                    make every occasion
+                    special. 🎁
+                    Let us help you make every celebration unforgettable!</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3 " id="shopBtn">Shop all
+                        gifts</button>
+
+                </div>
+            </div>
+        </div>
+        <!-- slider -->
+        <div class="section-header">
+            <h2 style="color: #eecad5">Categories</h2>
+            <p>Check our trending</p>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide container" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="w3-row-padding w3-padding-16 w3-center shadow-cat">
+                        <div class="w3-quarter">
+                            <!-- <a href="/Home/Tickets"> -->
+                            <img src="img/133062.jpg" alt="Adam Concert" />
+                            <!-- </a> -->
+                            <h3 class="mt-3">Vintage</h3>
+                        </div>
+                        <div class="w3-quarter">
+                            <img src="img/133062.jpg" alt="Hamaki Concert" />
+                            <h3 class="mt-3">Lego</h3>
+                        </div>
+                        <div class="w3-quarter">
+                            <img src="img/133062.jpg" alt="Mahmoud Concert" />
+                            <h3 class="mt-3">Sports</h3>
+                        </div>
+                        <div class="w3-quarter">
+                            <img src="img/133062.jpg" alt="Siilawy Concert" />
+                            <h3 class="mt-3">Toys</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="w3-row-padding w3-padding-16 w3-center shadow-cat">
+                        <div class="w3-quarter">
+                            <img src="img/133062.jpg" alt="Another Concert 1" />
+                            <h3 class="mt-3">By Color</h3>
+                        </div>
+                        <div class="w3-quarter">
+                            <img src="img/133062.jpg" alt="Another Concert 2" />
+                            <h3 class="mt-3">By Age</h3>
+                        </div>
+                        <div class="w3-quarter">
+                            <img src="img/133062.jpg" alt="Another Concert 3" />
+                            <h3 class="mt-3">By Price</h3>
+                        </div>
+                        <div class="w3-quarter">
+                            <img src="img/133062.jpg" alt="Another Concert 4" />
+                            <h3 class="mt-3">By Brand</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+        <div class="row featurette about-sectionn">
+            <div class="col-md-7 order-md-2  d-flex flex-column gap-5 about-txt">
+                <div class="section-header about-title">
+                    <h2 class="hh" style="color: #eecad5">Our Story</h2>
+
+                </div>
+                <div>
+                    <p class="lead about-para" style="text-align: left;">Welcome to KidsGifts Shop! Our journey began
+                        with a simple idea: to make every child
+                        smile by offering gifts that
+                        spark joy, inspire imagination, and create lasting memories. At KidsGifts Shop, we believe every
+                        child deserves something special, whether it’s for a birthday, a holiday, or
+                        just because. Our carefully curated collection includes toys, books, games, and unique items
+                        designed to light up young
+                        faces and hearts.</p>
+
+                </div>
+            </div>
+            <div class="col-md-5 order-md-1  d-flex  justify-content-center img-shadow">
+                <img src="img/7732.jpg" alt="" style="width: 500px; height: 500px;">
+                <title>Placeholder</title>
+
+            </div>
+        </div>
+        <div class="section-header">
+            <h2 style="color: #eecad5">New Arrivals</h2>
+
+        </div>
+        <div id="new-products" style="margin-left: 60px;">
+
+        </div>
+
+        <div class="spc-products-section" style="margin-left: 60px;">
+
+            <div class="section-header">
+                <h2 style="color: #eecad5">Spcieal Offers</h2>
+
+            </div>
+            <div id="offers-products">
+
+            </div>
+        </div>
+    </main>
+    <footer class="py-4 my-0">
+        <ul id="social_icon" class="nav justify-content-center list-unstyled pb-3">
+            <li><i class='bx bxl-instagram' style="font-size: 30px;"></i></li>
+            <li><i class='bx bxl-facebook-circle' style="font-size:30px;"></i></li>
+            <li><i class='bx bxl-twitter' style="font-size: 30px;"></i></li>
+        </ul>
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="product.html" class="nav-link px-2 text-body-secondary">Category</a></li>
+            <li class="nav-item"><a href="product.html" class="nav-link px-2 text-body-secondary">Trend</a></li>
+            <li class="nav-item"><a href="userProfile.html" class="nav-link px-2 text-body-secondary"> Your Profile </a>
+            </li>
+            <li class="nav-item"><a href="contactUs.html" class="nav-link px-2 text-body-secondary">Contact </a></li>
+
+        </ul>
+        <p class="text-center text-body-secondary">&copy; 2024 lolipop, Inc</p>
+    </footer>
+
+
+
+
+    <!-- Marketing messaging and featurettes
+  ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+
+    <!-- <script src="../assets/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script type="module" src="index.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+
+
+    </script>
+</body>
+
+
+
+</html>

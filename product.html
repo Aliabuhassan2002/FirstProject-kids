@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="product.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/11e4363e87.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="bg-light shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          Tiny Joys <span>★</span>
+          <div class="icon">❤</div>
+        </div>
+
+        <!-- Burger Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text" href="index.html" style="color: #EECAD5;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="product.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="aboutUs.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="contactUs.html">Contact </a>
+            </li>
+
+          </ul>
+
+          <!-- Search Bar and Icons -->
+          <div class="d-flex align-items-center">
+            <!-- Search Bar -->
+            <div class="input-group me-3">
+              <input type="text" class="form-control" placeholder="Search Product">
+              <button class="btn btn-outline-secondary" type="button">
+
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+
+            <!-- User Icon -->
+            <a style="color: black;" href="userProfile.html">
+              <i class="fa-regular fa-user fs-5"></i>
+            </a>
+            <span id="nav-username"></span>
+            <span class="fav-icon">
+              <a href="wishList.html"><i class="fa-regular fa-heart"></i></a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- -----------------------header----------------------- -->
+
+  <!-- -----------------------hero section----------------------- -->
+  <div class="heroSection">
+    <img src="img/bf70fd68-cd5a-495f-a89e-76ffe193f7d4.jpg" alt="" />
+  </div>
+  <!-- -----------------------filter feature----------------------- -->
+
+  <div id="filterContainer">
+    <div id="dropdownContainer" class="container">
+      <h4>Filter :</h4>
+      <div class="dropdown">
+        <a id="dropdownBTN" class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          By color
+        </a>
+
+        <ul class="dropdown-menu">
+          <li id="red" class="dropDownItems dropDownItemsColorValue dropdown-item">red</li>
+          <li id="blue" class="dropDownItems dropDownItemsColorValue dropdown-item">blue</li>
+          <li id="Green" class="dropDownItems dropDownItemsColorValue dropdown-item">green</li>
+          <li id="black" class="dropDownItems dropDownItemsColorValue dropdown-item">black</li>
+          <li id="Yellow" class="dropDownItems dropDownItemsColorValue dropdown-item">brown</li>
+          <li id="pink" class="dropDownItems dropDownItemsColorValue dropdown-item">pink</li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a id="dropdownBTN" class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          By price
+        </a>
+
+        <ul class="dropdown-menu dropdown-price">
+          <li id="price50" data-value="50" class="dropDownItems dropDownItemsPriceValue dropdown-item">less than $50
+          </li>
+          <li id="price100" data-value="51" class="dropDownItems dropDownItemsPriceValue dropdown-item">more than $100
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a id="dropdownBTN" class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          By gender
+        </a>
+
+        <ul class="dropdown-menu">
+          <li id="male" class="dropDownItems dropDownItemsgenderrValue dropdown-item">male</li>
+          <li id="female" class="dropDownItems dropDownItemsgenderrValue dropdown-item">female</li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a id="dropdownBTN" class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          By cities
+        </a>
+
+        <ul class="dropdown-menu">
+          <li id="threeStars" class="dropDownItems dropDownItemsCityrValue dropdown-item">zarqa</li>
+          <li id="fourStars" class="dropDownItems dropDownItemsCityrValue dropdown-item">amman</li>
+          <li id="fiveStars" class="dropDownItems dropDownItemsCityrValue dropdown-item">irbid</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- -----------------------products Card----------------------- -->
+  <div id="cardContainer" class="container">
+    <div class="container my-5">
+      <h2>Related Gifts</h2>
+    </div>
+  </div>
+
+  <!-- -----------------------footer----------------------- -->
+
+  <footer class="py-4 my-0">
+    <ul id="social_icon" class="nav justify-content-center list-unstyled pb-3">
+      <li><i class="bx bxl-instagram" style="font-size: 30px"></i></li>
+      <li><i class="bx bxl-facebook-circle" style="font-size: 30px"></i></li>
+      <li><i class="bx bxl-twitter" style="font-size: 30px"></i></li>
+    </ul>
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link px-2 text-body-secondary">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="product.html" class="nav-link px-2 text-body-secondary">Category</a>
+      </li>
+      <li class="nav-item">
+        <a href="product.html" class="nav-link px-2 text-body-secondary">Trend</a>
+      </li>
+      <li class="nav-item">
+        <a href="userProfile.html" class="nav-link px-2 text-body-secondary">
+          Your Profile
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="contactUs.html" class="nav-link px-2 text-body-secondary">Contact
+        </a>
+      </li>
+    </ul>
+    <p class="text-center text-body-secondary">&copy; 2024 lolipop, Inc</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script type="module" src="product.js"></script>
+</body>
+
+</html>

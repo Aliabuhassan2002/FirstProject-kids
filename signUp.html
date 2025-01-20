@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Register</title>
+  <link rel="stylesheet" href="signUp.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-section">
+      <h2>Get Started Now</h2>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="Enter your email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" />
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="terms" />
+          <label for="terms">I agree to the <a href="#">terms & policy</a></label>
+        </div>
+        <button type="button" class="form-button" id="authh">Signup</button>
+      </form>
+      <div class="divider">or</div>
+      <div class="social-buttons">
+        <div class="social-button" id="google-signin">
+          <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" />
+          <a href="javascript:void(0);"> Sign in with Google</a>
+        </div>
+        <div class="social-button">
+          <img src="https://img.icons8.com/ios-filled/50/facebook.png" alt="Apple" />
+          <a href="https://web.facebook.com/?_rdc=1&_rdr#">Sign in with Facebook</a>
+        </div>
+      </div>
+      <div class="text-link">
+        Have an account? <a href="logIn.html">Sign in</a>
+      </div>
+    </div>
+    <div class="image-section">
+      <img src="img/Screenshot 2025-01-15 205946.png" alt="Register" />
+    </div>
+  </div>
+
+  <script src="signUp.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
+
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="signUp.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Get Started Now</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the <a href="#">terms & policy</a></label>
+                </div>
+                <button type="button" class="form-button" onclick="validateForm()">Signup</button>
+            </form>
+            <div class="divider">or</div>
+            <div class="social-buttons">
+                <div class="social-button">
+                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                    <a href="https://mail.google.com/mail/u/0/#inbox"> Sign in with Google</a>
+                </div>
+                <div class="social-button">
+                    <img src="https://img.icons8.com/ios-filled/50/facebook.png" alt="Apple">
+                    <a href="https://web.facebook.com/?_rdc=1&_rdr#">Sign in with Facebook</a>
+                </div>
+            </div>
+            <div class="text-link">
+                Have an account? <a href="logIn.html">Sign in</a>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="img/Screenshot 2025-01-15 205946.png" alt="Register">
+        </div>
+    </div>
+
+    <script>
+
+
+        //regix
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const terms = document.getElementById('terms').checked;
+
+            const nameRegex = /^[A-Za-z\s]{3,30}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+            if (!nameRegex.test(name)) {
+                alert('Please enter a valid name (3-30 characters).');
+                return;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (!passwordRegex.test(password)) {
+                alert('Password must be at least 8 characters long and include both letters and numbers.');
+                return;
+            }
+
+            if (!terms) {
+                alert('You must agree to the terms and policy.');
+                return;
+            }
+
+            alert('Form submitted successfully!');
+        }
+    </script>-->
